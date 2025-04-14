@@ -5,26 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="run in docker idea config">
-      <change afterPath="$PROJECT_DIR$/.run/start app in docker.run.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/enums/OperationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/repository/WalletRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/WalletManagerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/WalletManagerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="run-in-docker" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/wallet_manager/WalletManagerApplication.java" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +48,14 @@
 }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -70,17 +88,28 @@
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [package].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.WalletManagerApplication.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;fix__error__2&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming Project/WalletManager&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;42fac4578f2757eb6c30bbb0d38c2b40&quot;
   }
 }</component>
-  <component name="RunManager" selected="Docker.start app in docker">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Programming Project\WalletManager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (2)">
     <configuration name="WalletManagerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="wallet_manager" />
       <target name="app" />
@@ -94,6 +123,19 @@
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.WalletManagerApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WalletManager" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WalletManager" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -307,6 +349,19 @@
       <workItem from="1742736241608" duration="4658000" />
       <workItem from="1742742079365" duration="140000" />
       <workItem from="1742743161961" duration="1856000" />
+      <workItem from="1744447604286" duration="45000" />
+      <workItem from="1744447660440" duration="19000" />
+      <workItem from="1744447681628" duration="66000" />
+      <workItem from="1744447757788" duration="5000" />
+      <workItem from="1744447765535" duration="16000" />
+      <workItem from="1744447856583" duration="14000" />
+      <workItem from="1744447878258" duration="4000" />
+      <workItem from="1744447886165" duration="48000" />
+      <workItem from="1744447957740" duration="3000" />
+      <workItem from="1744447963870" duration="194000" />
+      <workItem from="1744448162073" duration="84000" />
+      <workItem from="1744448293892" duration="5000" />
+      <workItem from="1744448301680" duration="7452000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />

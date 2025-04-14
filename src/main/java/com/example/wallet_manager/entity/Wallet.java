@@ -12,7 +12,6 @@ import java.util.UUID;
 public class Wallet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private BigDecimal balance;
@@ -21,12 +20,18 @@ public class Wallet {
         this.balance = BigDecimal.ZERO;
     }
 
+    public Wallet(UUID id, BigDecimal balance) {
+        this.id = id;
+        this.balance = balance;
+    }
+
+
     public UUID getId() {
         return id;
     }
 
-    public Wallet(BigDecimal balance) {
-        this.balance = balance;
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public BigDecimal getBalance() {
