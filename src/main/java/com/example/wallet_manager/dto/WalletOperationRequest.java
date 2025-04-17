@@ -11,27 +11,27 @@ import java.util.UUID;
 
 public class WalletOperationRequest {
 
-    private UUID id;
+    private UUID valletId;
     private OperationType operationType;
     private BigDecimal amount;
 
     @JsonCreator
     public WalletOperationRequest(
-            @JsonProperty(value = "id", required = true) @NotNull UUID id,
+            @JsonProperty(value = "valletId", required = true) @NotNull UUID valletId,
             @JsonProperty(value = "operationType", required = true) @NotNull OperationType operationType,
             @JsonProperty(value = "amount", required = true) @DecimalMin("0.01") BigDecimal amount
     ) {
-        this.id = id;
+        this.valletId = valletId;
         this.operationType = operationType;
         this.amount = amount;
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getValletId() {
+        return valletId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setValletId(UUID valletId) {
+        this.valletId = valletId;
     }
 
     public OperationType getOperationType() {

@@ -1,14 +1,12 @@
 package com.example.wallet_manager.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
+@Table(name = "wallet")
 public class Wallet {
 
     @Id
