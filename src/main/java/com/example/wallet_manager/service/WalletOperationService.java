@@ -22,8 +22,7 @@ public class WalletOperationService {
 
     public Wallet applyOperation(WalletOperationRequest walletOperationRequest) {
 
-        Wallet wallet = walletDataService.getWalletByUUID(walletOperationRequest.getValletId());
-
+        Wallet wallet = walletDataService.getWalletByUUID(walletOperationRequest.getWalletId());
 
         validateOperation(walletOperationRequest, wallet);
 

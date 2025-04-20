@@ -27,6 +27,6 @@ public class WalletController {
 
         walletOperationService.applyOperation(walletOperationRequest);
 
-        return walletDataService.getWalletByUUID(walletOperationRequest.getValletId());
+        return walletDataService.getWalletByUUID(walletOperationRequest.getWalletId());
     }
 }
