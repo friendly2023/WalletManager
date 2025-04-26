@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="run in docker idea config">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/enums/OperationType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/repository/WalletRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletService.java" afterDir="false" />
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,15 +20,15 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="writing_services" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,6 +87,10 @@
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.WalletManagerApplication.executor&quot;: &quot;Run&quot;,
@@ -109,7 +112,7 @@
       <recent name="C:\Programming Project\WalletManager" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment (2)">
+  <component name="RunManager" selected="Spring Boot.WalletManagerApplication">
     <configuration name="WalletManagerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="wallet_manager" />
       <target name="app" />
@@ -328,9 +331,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment (2)" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
       </list>
     </recent_temporary>
@@ -362,6 +365,17 @@
       <workItem from="1744448162073" duration="84000" />
       <workItem from="1744448293892" duration="5000" />
       <workItem from="1744448301680" duration="7452000" />
+      <workItem from="1744644472208" duration="6171000" />
+      <workItem from="1744817066251" duration="742000" />
+      <workItem from="1744827917686" duration="6067000" />
+      <workItem from="1744904943026" duration="10963000" />
+      <workItem from="1745157892186" duration="6282000" />
+      <workItem from="1745325505050" duration="10220000" />
+      <workItem from="1745427249985" duration="2461000" />
+      <workItem from="1745431018911" duration="3393000" />
+      <workItem from="1745509565524" duration="135000" />
+      <workItem from="1745509711544" duration="1847000" />
+      <workItem from="1745673314388" duration="755000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -371,7 +385,35 @@
       <option name="project" value="LOCAL" />
       <updated>1742139407056</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: класс Wallet, репозиторий и dto класс">
+      <created>1744644708028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744644708028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add: добавлен класс для проверки наличия счета в БД.&#10;написан кастомный класс с исключением.">
+      <created>1744658286278</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744658286278</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками">
+      <created>1744918727167</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744918727167</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке">
+      <created>1745164785917</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745164785917</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,6 +432,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="run in docker idea config" />
-    <option name="LAST_COMMIT_MESSAGE" value="run in docker idea config" />
+    <MESSAGE value="Add: класс Wallet, репозиторий и dto класс" />
+    <MESSAGE value="Add: добавлен класс для проверки наличия счета в БД.&#10;написан кастомный класс с исключением." />
+    <MESSAGE value="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками" />
+    <MESSAGE value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
   </component>
 </project>

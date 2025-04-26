@@ -1,8 +1,8 @@
 package com.example.wallet_manager.dto;
 
 import com.example.wallet_manager.enums.OperationType;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 
@@ -11,27 +11,22 @@ import java.util.UUID;
 
 public class WalletOperationRequest {
 
-    private UUID walletId;
-    private OperationType operationType;
-    private BigDecimal amount;
+    @NotNull(groups = {WalletData.class})
+    @JsonView({WalletData.class})
 
-    @JsonCreator
-    public WalletOperationRequest(
-            @JsonProperty(value = "walletId", required = true) @NotNull UUID walletId,
-            @JsonProperty(value = "operationType", required = true) @NotNull OperationType operationType,
-            @JsonProperty(value = "amount", required = true) @DecimalMin("0.01") BigDecimal amount
-    ) {
-        this.walletId = walletId;
-        this.operationType = operationType;
-        this.amount = amount;
+    private UUID walletId;
+    @NotNull(groups = {WalletData.class})
+    @JsonView({WalletData.class})
+    private OperationType operationType;
+    @NotNull(groups = {WalletData.class})
+    @JsonView({WalletData.class})
+    @DecimalMin(value = "0.01", groups = {WalletData.class})
+    private BigDecimal amount;
+    public WalletOperationRequest() {
     }
 
     public UUID getWalletId() {
         return walletId;
-    }
-
-    public void setWalletId(UUID walletId) {
-        this.walletId = walletId;
     }
 
     public OperationType getOperationType() {
@@ -48,5 +43,8 @@ public class WalletOperationRequest {
 
     public void setAmount(BigDecimal amount) {
         this.amount = amount;
+    }
+
+    public interface WalletData {
     }
 }
