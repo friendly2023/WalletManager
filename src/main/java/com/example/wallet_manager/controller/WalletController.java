@@ -11,17 +11,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@Validated
 public class WalletController {
-
-    private final WalletDataService walletDataService;
-    private final WalletOperationService walletOperationService;
+    public WalletController() {}
 
     @Autowired
-    public WalletController(WalletDataService walletDataService,
-                            WalletOperationService walletOperationService) {
-        this.walletDataService = walletDataService;
-        this.walletOperationService = walletOperationService;
-    }
+    private WalletOperationService walletOperationService;
 
     @PostMapping(value = "/")
     public Wallet getWalletData(@Validated(WalletOperationRequest.WalletData.class) @RequestBody WalletOperationRequest walletOperationRequest) {

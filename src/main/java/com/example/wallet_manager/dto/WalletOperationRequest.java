@@ -1,7 +1,6 @@
 package com.example.wallet_manager.dto;
 
 import com.example.wallet_manager.enums.OperationType;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonView;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
@@ -13,15 +12,17 @@ public class WalletOperationRequest {
 
     @NotNull(groups = {WalletData.class})
     @JsonView({WalletData.class})
-
     private UUID walletId;
+
     @NotNull(groups = {WalletData.class})
     @JsonView({WalletData.class})
     private OperationType operationType;
+
     @NotNull(groups = {WalletData.class})
     @JsonView({WalletData.class})
     @DecimalMin(value = "0.01", groups = {WalletData.class})
     private BigDecimal amount;
+
     public WalletOperationRequest() {
     }
 

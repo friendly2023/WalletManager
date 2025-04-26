@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке">
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="temporal">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/ValidationErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/Violation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +56,11 @@
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -66,47 +72,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.app: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.WalletManagerApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [clean,package...].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [clean,package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [jar:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:help].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:build-image].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.wallet_manager [package].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.WalletManagerApplication.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;fix__error__2&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Programming Project/WalletManager&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;42fac4578f2757eb6c30bbb0d38c2b40&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.Dockerfile.executor": "Run",
+    "Docker.docker-compose.yml.app: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
+    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
+    "JUnit.WalletManagerApplicationTests.contextLoads.executor": "Run",
+    "Maven.wallet_manager [clean,package...].executor": "Run",
+    "Maven.wallet_manager [clean,package].executor": "Run",
+    "Maven.wallet_manager [clean].executor": "Run",
+    "Maven.wallet_manager [install].executor": "Run",
+    "Maven.wallet_manager [jar:jar].executor": "Run",
+    "Maven.wallet_manager [org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean].executor": "Run",
+    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:help].executor": "Run",
+    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file].executor": "Run",
+    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor": "Run",
+    "Maven.wallet_manager [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor": "Run",
+    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:build-image].executor": "Run",
+    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor": "Run",
+    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor": "Run",
+    "Maven.wallet_manager [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.WalletManagerApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fix__error__2",
+    "jdk.selected.JAVA_MODULE": "22",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Programming Project/WalletManager",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
+    "spring.configuration.checksum": "42fac4578f2757eb6c30bbb0d38c2b40"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Programming Project\WalletManager" />
@@ -375,7 +381,7 @@
       <workItem from="1745431018911" duration="3393000" />
       <workItem from="1745509565524" duration="135000" />
       <workItem from="1745509711544" duration="1847000" />
-      <workItem from="1745673314388" duration="755000" />
+      <workItem from="1745673314388" duration="8608000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -413,7 +419,14 @@
       <option name="project" value="LOCAL" />
       <updated>1745164785917</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="temporal">
+      <created>1745674674126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745674674126</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -436,6 +449,11 @@
     <MESSAGE value="Add: добавлен класс для проверки наличия счета в БД.&#10;написан кастомный класс с исключением." />
     <MESSAGE value="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками" />
     <MESSAGE value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
+    <MESSAGE value="temporal" />
+    <option name="LAST_COMMIT_MESSAGE" value="temporal" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
