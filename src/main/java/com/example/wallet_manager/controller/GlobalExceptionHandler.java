@@ -4,6 +4,9 @@ import com.example.wallet_manager.dto.ErrorResponse;
 import com.example.wallet_manager.dto.ValidationErrorResponse;
 import com.example.wallet_manager.dto.Violation;
 import com.example.wallet_manager.exception.WalletNotFoundException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.exc.InvalidFormatException;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -58,52 +61,36 @@ public class GlobalExceptionHandler {
     public ValidationErrorResponse onMethodArgumentNotValidException(
             HttpMessageNotReadableException e
     ) {
+        Throwable mostSpecificCause = e.getMostSpecificCause();
+        String messageExNotSupp = "Field is not supported";
+        String messageExInvalidData = "Invalid data format";
+
+        if (mostSpecificCause instanceof UnrecognizedPropertyException) {
+            String unknownField = ((UnrecognizedPropertyException) mostSpecificCause).getPropertyName();
+
+            final Violation violations = new Violation(
+                    unknownField,
+                    messageExNotSupp
+            );
+            return new ValidationErrorResponse(List.of(violations));
+        }
+
+        if (mostSpecificCause instanceof InvalidFormatException) {
+            InvalidFormatException ex = (InvalidFormatException) mostSpecificCause;
+
+            String fieldName = ex.getPath().stream()
+                    .map(JsonMappingException.Reference::getFieldName)
+                    .findFirst()
+                    .get();
+
+            final Violation violations = new Violation(
+                    fieldName,
+                    messageExInvalidData
+            );
+            return new ValidationErrorResponse(List.of(violations));
+        }
+
         final Violation violations = new Violation(e.getMessage());
         return new ValidationErrorResponse(List.of(violations));
     }
-
-
-//нет нужного поля
-//    @ExceptionHandler(MethodArgumentNotValidException.class)
-//    public ResponseEntity<ErrorResponse> handleValidationException(MethodArgumentNotValidException ex) {
-//        List<String> errors = ex.getBindingResult()
-//                .getFieldErrors()
-//                .stream()
-//                .map(error -> error.getField() + ": " + error.getDefaultMessage())
-//                .collect(Collectors.toList());
-//
-//        ErrorResponse errorResponse = new ErrorResponse(
-//                "JSON_PARSE_ERROR",
-//                String.join("; ", errors)
-//        );
-//
-//        return ResponseEntity.badRequest().body(errorResponse);
-//    }
-
-//не то значение в walletId, operationType
-// amount:проверка на меньше 0,01
-//    @ExceptionHandler(HttpMessageNotReadableException.class)
-//    public ResponseEntity<ErrorResponse> handleJsonParseError(HttpMessageNotReadableException ex) {
-//        Throwable mostSpecificCause = ex.getMostSpecificCause();
-//        String technicalMessage = mostSpecificCause.getMessage();
-//
-////        String userFriendlyMessage = extractFriendlyMessage(technicalMessage);
-//
-//        return ResponseEntity.badRequest().body(
-//                new ErrorResponse("JSON_PARSE_ERROR", technicalMessage)
-//        );
-//    }
-//
-//    private String extractFriendlyMessage(String technicalMessage) {
-//        if (technicalMessage.contains("UUID")) {
-//            return "Поле 'walletId' должно быть валидным UUID, например: '550e8400-e29b-41d4-a716-446655440000'";
-//        }
-//        if (technicalMessage.contains("OperationType")) {
-//            return "Поле 'operationType' должно содержать одно из допустимых значений: 'DEPOSIT', 'WITHDRAW'";
-//        }
-//        if (technicalMessage.contains("BigDecimal")) {
-//            return "Поле 'amount' должно быть числом больше 0.01";
-//        }
-//        return "Ошибка в формате JSON: " + technicalMessage;
-//    }
 }
