@@ -62,7 +62,10 @@ public class WalletControllerTest {
 
         when(walletOperationService.applyOperation(any(WalletOperationRequest.class))).thenReturn(expectedWallet);
 
-        mockMvc.perform(post("/api/v1/wallet").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(request))).andExpect(status().isOk()).andExpect(jsonPath("$.balance").value(1100.0));
+        mockMvc.perform(post("/api/v1/wallet").
+                        contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(request)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.balance").value(1100.0));
     }
 
     @Test
