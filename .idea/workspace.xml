@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="temporal">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/ValidationErrorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/Violation.java" afterDir="false" />
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="json serialization error handler, constraint violation error handler, output of correct error messages">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/WalletControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/WalletOperationRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/entity/Wallet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,53 +72,132 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.Dockerfile.executor": "Run",
-    "Docker.docker-compose.yml.app: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml.db: Compose Deployment.executor": "Run",
-    "Docker.docker-compose.yml: Compose Deployment.executor": "Run",
-    "JUnit.WalletManagerApplicationTests.contextLoads.executor": "Run",
-    "Maven.wallet_manager [clean,package...].executor": "Run",
-    "Maven.wallet_manager [clean,package].executor": "Run",
-    "Maven.wallet_manager [clean].executor": "Run",
-    "Maven.wallet_manager [install].executor": "Run",
-    "Maven.wallet_manager [jar:jar].executor": "Run",
-    "Maven.wallet_manager [org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean].executor": "Run",
-    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:help].executor": "Run",
-    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file].executor": "Run",
-    "Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor": "Run",
-    "Maven.wallet_manager [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor": "Run",
-    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:build-image].executor": "Run",
-    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor": "Run",
-    "Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor": "Run",
-    "Maven.wallet_manager [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.WalletManagerApplication.executor": "Run",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "fix__error__2",
-    "jdk.selected.JAVA_MODULE": "22",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Programming Project/WalletManager",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
-    "spring.configuration.checksum": "42fac4578f2757eb6c30bbb0d38c2b40"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.Dockerfile.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.app: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml.db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker-compose.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.WalletManagerApplicationTests.contextLoads.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [clean,package...].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [jar:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-clean-plugin:3.4.1:clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:help].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install-file].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-install-plugin:3.1.3:install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.apache.maven.plugins:maven-jar-plugin:3.4.2:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:build-image].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.wallet_manager [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.WalletManagerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;fix__error__2&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming Project/WalletManager&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;42fac4578f2757eb6c30bbb0d38c2b40&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Programming Project\WalletManager" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.WalletManagerApplication">
+    <configuration name="WalletControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletControllerTest.applyOperation_shouldReturnBadRequest_whenAmountIsInvalidJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="applyOperation_shouldReturnBadRequest_whenAmountIsInvalidJson" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereAreExtraFields" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="applyOperation_shouldReturnBadRequest_whenThereAreExtraFields" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereIsNoRequired" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="applyOperation_shouldReturnBadRequest_whenThereIsNoRequired" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletControllerTest.getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WalletManagerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="wallet_manager" />
       <target name="app" />
@@ -271,64 +350,14 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment (2)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="app" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Docker.start app in docker" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (2)" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
-      <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
       <item itemvalue="JUnit.WalletManagerApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.WalletControllerTest" />
+      <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenAmountIsInvalidJson" />
+      <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereAreExtraFields" />
+      <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereIsNoRequired" />
+      <item itemvalue="JUnit.WalletControllerTest.getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid" />
       <item itemvalue="Maven.wallet_manager [spring-boot:repackage]" />
       <item itemvalue="Maven.wallet_manager [jar:jar]" />
       <item itemvalue="Maven.wallet_manager [spring-boot:build-image]" />
@@ -337,10 +366,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (2)" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
+        <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereAreExtraFields" />
+        <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenThereIsNoRequired" />
+        <item itemvalue="JUnit.WalletControllerTest" />
+        <item itemvalue="JUnit.WalletControllerTest.applyOperation_shouldReturnBadRequest_whenAmountIsInvalidJson" />
+        <item itemvalue="JUnit.WalletControllerTest.getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid" />
       </list>
     </recent_temporary>
   </component>
@@ -381,7 +411,12 @@
       <workItem from="1745431018911" duration="3393000" />
       <workItem from="1745509565524" duration="135000" />
       <workItem from="1745509711544" duration="1847000" />
-      <workItem from="1745673314388" duration="8608000" />
+      <workItem from="1745673314388" duration="8998000" />
+      <workItem from="1745758480913" duration="10025000" />
+      <workItem from="1745856293266" duration="2585000" />
+      <workItem from="1745861777100" duration="3937000" />
+      <workItem from="1745865760338" duration="2967000" />
+      <workItem from="1746433773473" duration="3225000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -426,7 +461,21 @@
       <option name="project" value="LOCAL" />
       <updated>1745674674126</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="json serialization error handler, constraint violation error handler">
+      <created>1745682284570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745682284570</updated>
+    </task>
+    <task id="LOCAL-00008" summary="json serialization error handler, constraint violation error handler, output of correct error messages">
+      <created>1745775367406</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745775367406</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +499,9 @@
     <MESSAGE value="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками" />
     <MESSAGE value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
     <MESSAGE value="temporal" />
-    <option name="LAST_COMMIT_MESSAGE" value="temporal" />
+    <MESSAGE value="json serialization error handler, constraint violation error handler" />
+    <MESSAGE value="json serialization error handler, constraint violation error handler, output of correct error messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="json serialization error handler, constraint violation error handler, output of correct error messages" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
