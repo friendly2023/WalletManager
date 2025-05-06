@@ -10,11 +10,10 @@ import java.util.UUID;
 
 @Service
 public class WalletDataService {
-    private final WalletRepository walletRepository;
-
     @Autowired
-    public WalletDataService(WalletRepository walletRepository) {
-        this.walletRepository = walletRepository;
+    private WalletRepository walletRepository;
+
+    public WalletDataService() {
     }
 
     public Wallet getWalletByUUID(UUID walletId) {

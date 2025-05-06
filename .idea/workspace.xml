@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Ref: переписан выброс ошибки недостаточности средств(InsufficientFundsException)&#10;Add: написан тест для ошибки InsufficientFundsException">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletOperationServiceTest.java" afterDir="false" />
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Add: написан тест для сервиса WalletOperationService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletOperationService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +116,7 @@
       <recent name="C:\Programming Project\WalletManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WalletOperationServiceTest.applyOperation_successfulDebitFromWallet">
+  <component name="RunManager" selected="Spring Boot.WalletManagerApplication">
     <configuration name="GlobalExceptionHandlerTest.testHandleWalletNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wallet_manager" />
       <extension name="coverage">
@@ -414,7 +416,7 @@
       <workItem from="1745861777100" duration="3937000" />
       <workItem from="1745865760338" duration="2967000" />
       <workItem from="1746433773473" duration="14192000" />
-      <workItem from="1746531099347" duration="11413000" />
+      <workItem from="1746531099347" duration="12593000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -508,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1746536633080</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add: написан тест для сервиса WalletOperationService">
+      <created>1746560304735</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746560304735</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -539,7 +548,8 @@
     <MESSAGE value="Add: написан тест для сервиса для запроса кошелька" />
     <MESSAGE value="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька" />
     <MESSAGE value="Ref: переписан выброс ошибки недостаточности средств(InsufficientFundsException)&#10;Add: написан тест для ошибки InsufficientFundsException" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ref: переписан выброс ошибки недостаточности средств(InsufficientFundsException)&#10;Add: написан тест для ошибки InsufficientFundsException" />
+    <MESSAGE value="Add: написан тест для сервиса WalletOperationService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: написан тест для сервиса WalletOperationService" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">

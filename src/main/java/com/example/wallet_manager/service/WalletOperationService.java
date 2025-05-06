@@ -11,14 +11,12 @@ import java.math.BigDecimal;
 
 @Service
 public class WalletOperationService {
-    private final WalletRepository walletRepository;
-    private final WalletDataService walletDataService;
-
     @Autowired
-    public WalletOperationService(WalletRepository walletRepository,
-                                  WalletDataService walletDataService) {
-        this.walletRepository = walletRepository;
-        this.walletDataService = walletDataService;
+    private WalletRepository walletRepository;
+    @Autowired
+    private WalletDataService walletDataService;
+
+    public WalletOperationService() {
     }
 
     public Wallet applyOperation(WalletOperationRequest walletOperationRequest) {
