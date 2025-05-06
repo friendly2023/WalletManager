@@ -51,9 +51,6 @@ public class WalletOperationService {
                     throw new InsufficientFundsException(wallet.getId());
                 }
                 break;
-
-            default:
-                throw new UnsupportedOperationException("Неподдерживаемый тип операции");
         }
     }
 
