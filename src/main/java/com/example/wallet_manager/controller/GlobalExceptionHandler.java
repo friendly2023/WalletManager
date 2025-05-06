@@ -1,15 +1,13 @@
 package com.example.wallet_manager.controller;
 
-import com.example.wallet_manager.dto.ErrorResponse;
 import com.example.wallet_manager.dto.ValidationErrorResponse;
 import com.example.wallet_manager.dto.Violation;
+import com.example.wallet_manager.exception.InsufficientFundsException;
 import com.example.wallet_manager.exception.WalletNotFoundException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
-import jakarta.validation.ConstraintViolationException;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
@@ -32,6 +30,16 @@ public class GlobalExceptionHandler {
         return new ValidationErrorResponse(List.of(violations));
     }
 
+    @ExceptionHandler(InsufficientFundsException.class)
+    @ResponseBody
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ValidationErrorResponse throwInsufficientFunds(InsufficientFundsException ex) {
+        final Violation violations = new Violation(
+                null,
+                ex.getMessage()
+        );
+        return new ValidationErrorResponse(List.of(violations));
+    }
 
 //    @ExceptionHandler(ConstraintViolationException.class)
 //    public ResponseEntity<ValidationErrorResponse> onConstraintValidationException(

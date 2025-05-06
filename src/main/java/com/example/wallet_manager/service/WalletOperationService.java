@@ -2,6 +2,7 @@ package com.example.wallet_manager.service;
 
 import com.example.wallet_manager.dto.WalletOperationRequest;
 import com.example.wallet_manager.entity.Wallet;
+import com.example.wallet_manager.exception.InsufficientFundsException;
 import com.example.wallet_manager.repository.WalletRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -47,7 +48,7 @@ public class WalletOperationService {
             case WITHDRAW:
                 newBalance = currentBalance.subtract(amount);
                 if (newBalance.compareTo(BigDecimal.ZERO) < 0) {
-                    throw new IllegalArgumentException("Недостаточно средств на кошельке для списания.");
+                    throw new InsufficientFundsException(wallet.getId());
                 }
                 break;
 

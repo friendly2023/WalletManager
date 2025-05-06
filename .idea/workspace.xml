@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Add: написан тест для сервиса для запроса кошелька">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/GlobalExceptionHandlerTest.java" afterDir="false" />
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/exception/InsufficientFundsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/ValidationErrorResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/ValidationErrorResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/Violation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/dto/Violation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/exception/WalletNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/exception/WalletNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletDataServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletDataServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletOperationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletOperationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/GlobalExceptionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/GlobalExceptionHandlerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +117,7 @@
       <recent name="C:\Programming Project\WalletManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GlobalExceptionHandlerTest.testHandleWalletNotFound">
+  <component name="RunManager" selected="JUnit.GlobalExceptionHandlerTest.testInsufficientFundsException">
     <configuration name="GlobalExceptionHandlerTest.testHandleWalletNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wallet_manager" />
       <extension name="coverage">
@@ -131,6 +129,22 @@
       <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.GlobalExceptionHandlerTest" />
       <option name="METHOD_NAME" value="testHandleWalletNotFound" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlobalExceptionHandlerTest.testInsufficientFundsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.GlobalExceptionHandlerTest" />
+      <option name="METHOD_NAME" value="testInsufficientFundsException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -179,22 +193,6 @@
       <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerExceptionTest" />
       <option name="METHOD_NAME" value="shouldReturn400WhenWalletNotFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wallet_manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.wallet_manager.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
-      <option name="METHOD_NAME" value="getWalletByUUID_shouldThrowException_whenWalletNotExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -355,11 +353,11 @@
     <list>
       <item itemvalue="Docker.start app in docker" />
       <item itemvalue="JUnit.WalletManagerApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.GlobalExceptionHandlerTest.testInsufficientFundsException" />
       <item itemvalue="JUnit.GlobalExceptionHandlerTest.testHandleWalletNotFound" />
       <item itemvalue="JUnit.GlobalExceptionHandlerTest.testWalletNotFoundException" />
       <item itemvalue="JUnit.WalletControllerExceptionTest.getWalletByUUID_shouldReturnBadRequest_whenWalletNotFound" />
       <item itemvalue="JUnit.WalletControllerExceptionTest.shouldReturn400WhenWalletNotFound" />
-      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
       <item itemvalue="Maven.wallet_manager [spring-boot:repackage]" />
       <item itemvalue="Maven.wallet_manager [jar:jar]" />
       <item itemvalue="Maven.wallet_manager [spring-boot:build-image]" />
@@ -368,11 +366,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GlobalExceptionHandlerTest.testInsufficientFundsException" />
         <item itemvalue="JUnit.GlobalExceptionHandlerTest.testHandleWalletNotFound" />
         <item itemvalue="JUnit.GlobalExceptionHandlerTest.testWalletNotFoundException" />
         <item itemvalue="JUnit.WalletControllerExceptionTest.shouldReturn400WhenWalletNotFound" />
         <item itemvalue="JUnit.WalletControllerExceptionTest.getWalletByUUID_shouldReturnBadRequest_whenWalletNotFound" />
-        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
       </list>
     </recent_temporary>
   </component>
@@ -419,7 +417,7 @@
       <workItem from="1745861777100" duration="3937000" />
       <workItem from="1745865760338" duration="2967000" />
       <workItem from="1746433773473" duration="14192000" />
-      <workItem from="1746531099347" duration="650000" />
+      <workItem from="1746531099347" duration="4386000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -499,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1746482443139</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька">
+      <created>1746532413682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746532413682</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +533,8 @@
     <MESSAGE value="Add: вывод ошибок при валидации json покрыт тестами" />
     <MESSAGE value="временно" />
     <MESSAGE value="Add: написан тест для сервиса для запроса кошелька" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add: написан тест для сервиса для запроса кошелька" />
+    <MESSAGE value="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
