@@ -22,9 +22,14 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(WalletNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleWalletNotFound(WalletNotFoundException ex) {
-        ErrorResponse error = new ErrorResponse("WALLET_NOT_FOUND", ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(error);
+    @ResponseBody
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ValidationErrorResponse handleWalletNotFound(WalletNotFoundException ex) {
+        final Violation violations = new Violation(
+                "walletId",
+                ex.getMessage()
+        );
+        return new ValidationErrorResponse(List.of(violations));
     }
 
 

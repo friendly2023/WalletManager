@@ -16,4 +16,12 @@ public class Violation {
     public Violation(String message) {
         this.message = message;
     }
+
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public String getMessage() {
+        return message;
+    }
 }
