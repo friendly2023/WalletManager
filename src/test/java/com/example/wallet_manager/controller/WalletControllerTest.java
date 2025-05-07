@@ -3,7 +3,9 @@ package com.example.wallet_manager.controller;
 import com.example.wallet_manager.dto.WalletOperationRequest;
 import com.example.wallet_manager.entity.Wallet;
 import com.example.wallet_manager.enums.OperationType;
+import com.example.wallet_manager.service.WalletDataService;
 import com.example.wallet_manager.service.WalletOperationService;
+import com.example.wallet_manager.service.verification.UUIDValidator;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,12 @@ public class WalletControllerTest {
     private ObjectMapper objectMapper;
     @MockitoBean
     private WalletOperationService walletOperationService;
+
+    @MockitoBean
+    private WalletDataService walletDataService;
+
+    @MockitoBean
+    private UUIDValidator uuidValidator;
 
     @Test
     void getWalletDataAfterTheChanges_shouldReturnWallet_whenRequestIsValid() throws Exception {
