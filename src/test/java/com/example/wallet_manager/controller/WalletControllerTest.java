@@ -39,7 +39,7 @@ public class WalletControllerTest {
     private WalletOperationService walletOperationService;
 
     @Test
-    void getWalletData_shouldReturnWallet_whenRequestIsValid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnWallet_whenRequestIsValid() throws Exception {
 
         WalletOperationRequest request = new WalletOperationRequest();
         UUID walletId = UUID.randomUUID();
@@ -69,7 +69,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    void getWalletData_shouldReturnBadRequest_whenWalletIdTypeIsInvalid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnBadRequest_whenWalletIdTypeIsInvalid() throws Exception {
 
         String invalidJson = """
                         {
@@ -87,7 +87,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    void getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid() throws Exception {
 
         String invalidJson = """
                         {
