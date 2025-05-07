@@ -18,7 +18,6 @@ public class WalletDataService {
 
     public Wallet getWalletByUUID(UUID walletId) {
 
-        return walletRepository.findById(walletId)
-                .orElseThrow(() -> new WalletNotFoundException(walletId));
+        return walletRepository.getWalletByUUID(walletId);
     }
 }

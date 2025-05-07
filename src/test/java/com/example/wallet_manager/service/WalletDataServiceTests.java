@@ -11,13 +11,10 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.lang.reflect.Field;
-import java.util.Optional;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
 public class WalletDataServiceTests {
@@ -38,8 +35,8 @@ public class WalletDataServiceTests {
         field.setAccessible(true);
         field.set(expectedWallet, walletId);
 
-        Mockito.when(walletRepository.findById(walletId))
-                .thenReturn(Optional.of(expectedWallet));
+        Mockito.when(walletRepository.getWalletByUUID(walletId))
+                .thenReturn(expectedWallet);
 
         Wallet actualWallet = walletDataService.getWalletByUUID(walletId);
 
@@ -50,12 +47,12 @@ public class WalletDataServiceTests {
     void getWalletByUUID_shouldThrowException_whenWalletNotExists() {
 
         UUID walletId = UUID.randomUUID();
-        Mockito.when(walletRepository.findById(walletId)).thenReturn(Optional.empty());
 
-        WalletNotFoundException exception = assertThrows(WalletNotFoundException.class,
-                () -> walletDataService.getWalletByUUID(walletId));
+        Mockito.when(walletRepository.getWalletByUUID(walletId))
+                .thenThrow(new WalletNotFoundException(walletId));
 
-        assertEquals("Кошелек с идентификатором '" + walletId + "' не найден.", exception.getMessage());
-        verify(walletRepository, times(1)).findById(walletId);
+        assertThrows(WalletNotFoundException.class, () -> {
+            walletDataService.getWalletByUUID(walletId);
+        });
     }
 }
