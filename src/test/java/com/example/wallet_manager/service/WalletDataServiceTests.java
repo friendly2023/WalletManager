@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.lang.reflect.Field;
@@ -15,6 +14,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class WalletDataServiceTests {
@@ -35,7 +35,7 @@ public class WalletDataServiceTests {
         field.setAccessible(true);
         field.set(expectedWallet, walletId);
 
-        Mockito.when(walletRepository.getWalletByUUID(walletId))
+        when(walletRepository.getWalletByUUID(walletId))
                 .thenReturn(expectedWallet);
 
         Wallet actualWallet = walletDataService.getWalletByUUID(walletId);
@@ -48,7 +48,7 @@ public class WalletDataServiceTests {
 
         UUID walletId = UUID.randomUUID();
 
-        Mockito.when(walletRepository.getWalletByUUID(walletId))
+        when(walletRepository.getWalletByUUID(walletId))
                 .thenThrow(new WalletNotFoundException(walletId));
 
         assertThrows(WalletNotFoundException.class, () -> {

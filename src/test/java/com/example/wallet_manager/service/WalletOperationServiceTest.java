@@ -18,7 +18,11 @@ import static com.example.wallet_manager.enums.OperationType.DEPOSIT;
 import static com.example.wallet_manager.enums.OperationType.WITHDRAW;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.any;
 
 @ExtendWith(MockitoExtension.class)
 public class WalletOperationServiceTest {
