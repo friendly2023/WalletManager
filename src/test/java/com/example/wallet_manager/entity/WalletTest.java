@@ -21,10 +21,6 @@ public class WalletTest {
         BigDecimal complexCalculation = BigDecimal.valueOf(9.99).add(BigDecimal.valueOf(7.77))
                                                                 .subtract(BigDecimal.valueOf(12.12));
 
-        System.out.println("0.03 : " + amount);
-        System.out.println("0.01 : " + difference);
-        System.out.println("5.64 : " + complexCalculation);
-
         assertEquals(BigDecimal.valueOf(0.03), amount);
         assertEquals(BigDecimal.valueOf(0.01), difference);
         assertEquals(BigDecimal.valueOf(5.64), complexCalculation);

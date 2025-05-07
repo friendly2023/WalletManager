@@ -43,9 +43,6 @@ public class WalletControllerTest {
     @MockitoBean
     private WalletDataService walletDataService;
 
-    @MockitoBean
-    private UUIDValidator uuidValidator;
-
     @Test
     void getWalletDataAfterTheChanges_shouldReturnWallet_whenRequestIsValid() throws Exception {
 
