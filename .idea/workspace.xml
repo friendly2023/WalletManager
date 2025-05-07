@@ -4,27 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="run in docker idea config">
-      <change afterPath="$PROJECT_DIR$/.run/start app in docker.run.xml" afterDir="false" />
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Ref: отлов ошибки WalletNotFoundException перенесен в WalletRepository">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/WalletManagerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/WalletManagerApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletOperationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletOperationServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="run-in-docker" />
+        <entry key="$PROJECT_DIR$" value="1c0b5087c79530f431fb74cb69a11731df94b88c" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/.env" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/.idea/workspace.xml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/docker-compose.yml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/main/java/com/example/wallet_manager/WalletManagerApplication.java" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +45,19 @@
 }</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="downloadDocsAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -70,17 +90,80 @@
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:repackage].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [org.springframework.boot:spring-boot-maven-plugin:3.4.3:run].executor&quot;: &quot;Run&quot;,
     &quot;Maven.wallet_manager [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;Spring Boot.WalletManagerApplication.executor&quot;: &quot;Run&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;fix__error__2&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;22&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming Project/WalletManager/src/test/java/com/example/wallet_manager/service/WalletDataServiceTest.java&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.runner&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;42fac4578f2757eb6c30bbb0d38c2b40&quot;
   }
 }</component>
-  <component name="RunManager" selected="Docker.start app in docker">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Programming Project\WalletManager" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.All in wallet_manager">
+    <configuration name="All in wallet_manager (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in wallet_manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
+      <option name="METHOD_NAME" value="getWalletByUUID_shouldReturnWallet_whenWalletExists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
+      <option name="METHOD_NAME" value="getWalletByUUID_shouldThrowException_whenWalletNotExists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WalletManagerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="wallet_manager" />
       <target name="app" />
@@ -94,6 +177,35 @@
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.WalletManagerApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.repository.WalletRepositoryTest" />
+      <option name="METHOD_NAME" value="getWalletByUUID_shouldReturnWallet_whenExists" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="WalletManager" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="WalletManager" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -220,64 +332,14 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment (1)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment (2)" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="app" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Docker.start app in docker" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (2)" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
-      <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
-      <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
       <item itemvalue="JUnit.WalletManagerApplicationTests.contextLoads" />
+      <item itemvalue="JUnit.All in wallet_manager" />
+      <item itemvalue="JUnit.All in wallet_manager (1)" />
+      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" />
+      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
+      <item itemvalue="JUnit.WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" />
       <item itemvalue="Maven.wallet_manager [spring-boot:repackage]" />
       <item itemvalue="Maven.wallet_manager [jar:jar]" />
       <item itemvalue="Maven.wallet_manager [spring-boot:build-image]" />
@@ -286,10 +348,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (2)" />
-        <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment (1)" />
+        <item itemvalue="JUnit.All in wallet_manager" />
+        <item itemvalue="JUnit.All in wallet_manager (1)" />
+        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
+        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" />
+        <item itemvalue="JUnit.WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" />
       </list>
     </recent_temporary>
   </component>
@@ -307,6 +370,37 @@
       <workItem from="1742736241608" duration="4658000" />
       <workItem from="1742742079365" duration="140000" />
       <workItem from="1742743161961" duration="1856000" />
+      <workItem from="1744447604286" duration="45000" />
+      <workItem from="1744447660440" duration="19000" />
+      <workItem from="1744447681628" duration="66000" />
+      <workItem from="1744447757788" duration="5000" />
+      <workItem from="1744447765535" duration="16000" />
+      <workItem from="1744447856583" duration="14000" />
+      <workItem from="1744447878258" duration="4000" />
+      <workItem from="1744447886165" duration="48000" />
+      <workItem from="1744447957740" duration="3000" />
+      <workItem from="1744447963870" duration="194000" />
+      <workItem from="1744448162073" duration="84000" />
+      <workItem from="1744448293892" duration="5000" />
+      <workItem from="1744448301680" duration="7452000" />
+      <workItem from="1744644472208" duration="6171000" />
+      <workItem from="1744817066251" duration="742000" />
+      <workItem from="1744827917686" duration="6067000" />
+      <workItem from="1744904943026" duration="10963000" />
+      <workItem from="1745157892186" duration="6282000" />
+      <workItem from="1745325505050" duration="10220000" />
+      <workItem from="1745427249985" duration="2461000" />
+      <workItem from="1745431018911" duration="3393000" />
+      <workItem from="1745509565524" duration="135000" />
+      <workItem from="1745509711544" duration="1847000" />
+      <workItem from="1745673314388" duration="8998000" />
+      <workItem from="1745758480913" duration="10025000" />
+      <workItem from="1745856293266" duration="2585000" />
+      <workItem from="1745861777100" duration="3937000" />
+      <workItem from="1745865760338" duration="2967000" />
+      <workItem from="1746433773473" duration="14192000" />
+      <workItem from="1746531099347" duration="13118000" />
+      <workItem from="1746609556699" duration="5776000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -316,7 +410,119 @@
       <option name="project" value="LOCAL" />
       <updated>1742139407056</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add: класс Wallet, репозиторий и dto класс">
+      <created>1744644708028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744644708028</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add: добавлен класс для проверки наличия счета в БД.&#10;написан кастомный класс с исключением.">
+      <created>1744658286278</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744658286278</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками">
+      <created>1744918727167</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744918727167</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке">
+      <created>1745164785917</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745164785917</updated>
+    </task>
+    <task id="LOCAL-00006" summary="temporal">
+      <created>1745674674126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745674674126</updated>
+    </task>
+    <task id="LOCAL-00007" summary="json serialization error handler, constraint violation error handler">
+      <created>1745682284570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745682284570</updated>
+    </task>
+    <task id="LOCAL-00008" summary="json serialization error handler, constraint violation error handler, output of correct error messages">
+      <created>1745775367406</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745775367406</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Add: вывод ошибок при валидации json покрыт тестами">
+      <created>1746438124494</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1746438124494</updated>
+    </task>
+    <task id="LOCAL-00010" summary="временно">
+      <created>1746446475223</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1746446475223</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Add: написан тест для сервиса для запроса кошелька">
+      <created>1746482443139</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1746482443139</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька">
+      <created>1746532413682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1746532413682</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Ref: переписан выброс ошибки недостаточности средств(InsufficientFundsException)&#10;Add: написан тест для ошибки InsufficientFundsException">
+      <created>1746536633080</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1746536633080</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add: написан тест для сервиса WalletOperationService">
+      <created>1746560304735</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1746560304735</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Ref: переписано использование аннотации @Autowired">
+      <created>1746561131187</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1746561131187</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add: добавлен тест для проверки корректрости операций с малыми суммами">
+      <created>1746611470650</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1746611470650</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ref: отлов ошибки WalletNotFoundException перенесен в WalletRepository">
+      <created>1746615525641</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1746615525641</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +541,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="run in docker idea config" />
-    <option name="LAST_COMMIT_MESSAGE" value="run in docker idea config" />
+    <MESSAGE value="Add: класс Wallet, репозиторий и dto класс" />
+    <MESSAGE value="Add: добавлен класс для проверки наличия счета в БД.&#10;написан кастомный класс с исключением." />
+    <MESSAGE value="Add: добавлен контроллер с post методом,&#10;сервис для работы с балансом и проверками" />
+    <MESSAGE value="Add: добавлен вывод сообщения об ошибке при ненайденом кошельке" />
+    <MESSAGE value="temporal" />
+    <MESSAGE value="json serialization error handler, constraint violation error handler" />
+    <MESSAGE value="json serialization error handler, constraint violation error handler, output of correct error messages" />
+    <MESSAGE value="Add: вывод ошибок при валидации json покрыт тестами" />
+    <MESSAGE value="временно" />
+    <MESSAGE value="Add: написан тест для сервиса для запроса кошелька" />
+    <MESSAGE value="Add: написан тест для контроллера выброса ошибки при отсутствии кошелька" />
+    <MESSAGE value="Ref: переписан выброс ошибки недостаточности средств(InsufficientFundsException)&#10;Add: написан тест для ошибки InsufficientFundsException" />
+    <MESSAGE value="Add: написан тест для сервиса WalletOperationService" />
+    <MESSAGE value="Ref: переписано использование аннотации @Autowired" />
+    <MESSAGE value="Add: добавлен тест для проверки корректрости операций с малыми суммами" />
+    <MESSAGE value="Ref: отлов ошибки WalletNotFoundException перенесен в WalletRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ref: отлов ошибки WalletNotFoundException перенесен в WalletRepository" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

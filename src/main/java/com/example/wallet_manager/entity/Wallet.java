@@ -1,18 +1,17 @@
 package com.example.wallet_manager.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
+@Table(name = "wallet")
 public class Wallet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
     private BigDecimal balance;
@@ -21,12 +20,14 @@ public class Wallet {
         this.balance = BigDecimal.ZERO;
     }
 
-    public UUID getId() {
-        return id;
+    public Wallet(UUID id, BigDecimal balance) {
+        this.id = id;
+        this.balance = balance;
     }
 
-    public Wallet(BigDecimal balance) {
-        this.balance = balance;
+
+    public UUID getId() {
+        return id;
     }
 
     public BigDecimal getBalance() {
