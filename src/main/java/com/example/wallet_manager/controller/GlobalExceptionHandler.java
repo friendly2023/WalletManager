@@ -3,6 +3,7 @@ package com.example.wallet_manager.controller;
 import com.example.wallet_manager.dto.ValidationErrorResponse;
 import com.example.wallet_manager.dto.Violation;
 import com.example.wallet_manager.exception.InsufficientFundsException;
+import com.example.wallet_manager.exception.InvalidUUIDFormatException;
 import com.example.wallet_manager.exception.WalletNotFoundException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -23,10 +24,10 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(WalletNotFoundException.class)
+    @ExceptionHandler({WalletNotFoundException.class, InvalidUUIDFormatException.class})
     @ResponseBody
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ValidationErrorResponse handleWalletNotFound(WalletNotFoundException ex) {
+    public ValidationErrorResponse handleWalletNotFound(RuntimeException ex) {
         final Violation violations = new Violation(
                 "walletId",
                 ex.getMessage()
