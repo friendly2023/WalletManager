@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="Ref: отлов ошибки WalletNotFoundException перенесен в WalletRepository">
+    <list default="true" id="7b18acbc-2935-4eb0-a9cd-1361ffc30703" name="Changes" comment="bug fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/exception/InvalidUUIDFormatException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/verification/UUIDValidator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/controller/WalletController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/wallet_manager/service/WalletDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletOperationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletOperationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/WalletControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/controller/WalletControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletDataServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/wallet_manager/service/WalletDataServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,8 +120,8 @@
       <recent name="C:\Programming Project\WalletManager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in wallet_manager">
-    <configuration name="All in wallet_manager (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WalletDataServiceTests.getWalletByStringUUID_shouldThrowException_validationIsNotSuccessful">
+    <configuration name="All in wallet_manager (3)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wallet_manager" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
@@ -124,31 +129,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in wallet_manager" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wallet_manager" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WalletControllerTest.getWalletById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wallet_manager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.wallet_manager.service.*" />
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
-      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
-      <option name="METHOD_NAME" value="getWalletByUUID_shouldReturnWallet_whenWalletExists" />
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="getWalletById" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WalletControllerTest.getWalletById_shouldReturnNotFound_whenWalletDoesNotExist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.controller.WalletControllerTest" />
+      <option name="METHOD_NAME" value="getWalletById_shouldReturnNotFound_whenWalletDoesNotExist" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletDataServiceTests.getWalletByStringUUID_shouldReturnWallet_validationIsSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="wallet_manager" />
       <extension name="coverage">
         <pattern>
@@ -158,7 +171,23 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
-      <option name="METHOD_NAME" value="getWalletByUUID_shouldThrowException_whenWalletNotExists" />
+      <option name="METHOD_NAME" value="getWalletByStringUUID_shouldReturnWallet_validationIsSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WalletDataServiceTests.getWalletByStringUUID_shouldThrowException_validationIsNotSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="wallet_manager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.wallet_manager.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.wallet_manager.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.service.WalletDataServiceTests" />
+      <option name="METHOD_NAME" value="getWalletByStringUUID_shouldThrowException_validationIsNotSuccessful" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,22 +205,6 @@
       <option name="PACKAGE_NAME" value="com.example.wallet_manager" />
       <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.WalletManagerApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="wallet_manager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.wallet_manager.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.wallet_manager.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.example.wallet_manager.repository.WalletRepositoryTest" />
-      <option name="METHOD_NAME" value="getWalletByUUID_shouldReturnWallet_whenExists" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -335,11 +348,11 @@
     <list>
       <item itemvalue="Docker.start app in docker" />
       <item itemvalue="JUnit.WalletManagerApplicationTests.contextLoads" />
-      <item itemvalue="JUnit.All in wallet_manager" />
-      <item itemvalue="JUnit.All in wallet_manager (1)" />
-      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" />
-      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
-      <item itemvalue="JUnit.WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" />
+      <item itemvalue="JUnit.All in wallet_manager (3)" />
+      <item itemvalue="JUnit.WalletControllerTest.getWalletById" />
+      <item itemvalue="JUnit.WalletControllerTest.getWalletById_shouldReturnNotFound_whenWalletDoesNotExist" />
+      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByStringUUID_shouldReturnWallet_validationIsSuccessful" />
+      <item itemvalue="JUnit.WalletDataServiceTests.getWalletByStringUUID_shouldThrowException_validationIsNotSuccessful" />
       <item itemvalue="Maven.wallet_manager [spring-boot:repackage]" />
       <item itemvalue="Maven.wallet_manager [jar:jar]" />
       <item itemvalue="Maven.wallet_manager [spring-boot:build-image]" />
@@ -348,11 +361,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in wallet_manager" />
-        <item itemvalue="JUnit.All in wallet_manager (1)" />
-        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldThrowException_whenWalletNotExists" />
-        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByUUID_shouldReturnWallet_whenWalletExists" />
-        <item itemvalue="JUnit.WalletRepositoryTest.getWalletByUUID_shouldReturnWallet_whenExists" />
+        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByStringUUID_shouldThrowException_validationIsNotSuccessful" />
+        <item itemvalue="JUnit.WalletDataServiceTests.getWalletByStringUUID_shouldReturnWallet_validationIsSuccessful" />
+        <item itemvalue="JUnit.WalletControllerTest.getWalletById_shouldReturnNotFound_whenWalletDoesNotExist" />
+        <item itemvalue="JUnit.WalletControllerTest.getWalletById" />
+        <item itemvalue="JUnit.All in wallet_manager (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -401,6 +414,7 @@
       <workItem from="1746433773473" duration="14192000" />
       <workItem from="1746531099347" duration="13118000" />
       <workItem from="1746609556699" duration="5776000" />
+      <workItem from="1746701864627" duration="5147000" />
     </task>
     <task id="LOCAL-00001" summary="run in docker idea config">
       <option name="closed" value="true" />
@@ -533,7 +547,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="task/implementing_a_GET_request" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

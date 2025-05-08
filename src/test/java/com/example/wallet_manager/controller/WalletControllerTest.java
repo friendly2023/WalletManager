@@ -3,6 +3,8 @@ package com.example.wallet_manager.controller;
 import com.example.wallet_manager.dto.WalletOperationRequest;
 import com.example.wallet_manager.entity.Wallet;
 import com.example.wallet_manager.enums.OperationType;
+import com.example.wallet_manager.exception.InvalidUUIDFormatException;
+import com.example.wallet_manager.service.WalletDataService;
 import com.example.wallet_manager.service.WalletOperationService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -19,6 +21,7 @@ import java.util.UUID;
 import static org.hamcrest.Matchers.containsString;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -37,9 +40,11 @@ public class WalletControllerTest {
     private ObjectMapper objectMapper;
     @MockitoBean
     private WalletOperationService walletOperationService;
+    @MockitoBean
+    private WalletDataService walletDataService;
 
     @Test
-    void getWalletData_shouldReturnWallet_whenRequestIsValid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnWallet_whenRequestIsValid() throws Exception {
 
         WalletOperationRequest request = new WalletOperationRequest();
         UUID walletId = UUID.randomUUID();
@@ -69,7 +74,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    void getWalletData_shouldReturnBadRequest_whenWalletIdTypeIsInvalid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnBadRequest_whenWalletIdTypeIsInvalid() throws Exception {
 
         String invalidJson = """
                         {
@@ -87,7 +92,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    void getWalletData_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid() throws Exception {
+    void getWalletDataAfterTheChanges_shouldReturnBadRequest_whenOperationTypeTypeIsInvalid() throws Exception {
 
         String invalidJson = """
                         {
@@ -139,7 +144,7 @@ public class WalletControllerTest {
     }
 
     @Test
-    void applyOperation_shouldReturnBadRequest_whenThereAreExtraFields() throws Exception {
+    void applyOperation_() throws Exception {
 
         String invalidJson = """
                     {
@@ -155,5 +160,35 @@ public class WalletControllerTest {
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.violations[0].fieldName").value("qwert"))
                 .andExpect(jsonPath("$.violations[0].message").value(messageExNotSupp));
+    }
+
+    @Test
+    void getWalletById_whenIdIsValid() throws Exception {
+
+        Wallet expectedWallet = new Wallet();
+        UUID walletId = UUID.randomUUID();
+        expectedWallet.setBalance(BigDecimal.valueOf(1000));
+
+        Field field = Wallet.class.getDeclaredField("id");
+        field.setAccessible(true);
+        field.set(expectedWallet, walletId);
+
+        when(walletDataService.getWalletByStringUUID(String.valueOf(walletId))).thenReturn(expectedWallet);
+
+        mockMvc.perform(get("/api/v1/wallets/{walletId}", walletId))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.id").value(String.valueOf(walletId)))
+                .andExpect(jsonPath("$.balance").value(1000));
+    }
+
+    @Test
+    void getWalletById_whenIdIsNotValid() throws Exception {
+
+        UUID walletId = UUID.randomUUID();
+
+        when(walletDataService.getWalletByStringUUID(String.valueOf(walletId))).thenThrow(new InvalidUUIDFormatException());
+
+        mockMvc.perform(get("/api/v1/wallets/{walletId}", walletId))
+                .andExpect(status().isBadRequest());
     }
 }
